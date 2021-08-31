@@ -6,4 +6,7 @@ br
 -@articles.each do |article|
     =article.id
     =article.title
+    =link_to 'Düzenle', edit_article_path(article)
+    =link_to 'Görüntüle', show_article_path(article.sef_link)
+    =link_to 'Sil', article_path(article), method: :delete, data: { confirm: 'Emin misiniz?' }
     hr
